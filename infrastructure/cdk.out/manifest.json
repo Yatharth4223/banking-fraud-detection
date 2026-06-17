@@ -1,0 +1,343 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "PracticeCdkStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "PracticeCdkStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "PracticeCdkStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "PracticeCdkStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/835f8109c4eb7b4bae2987c0a275ff3f08c26244bd7a8b76098be97262e38b2d.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "PracticeCdkStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "PracticeCdkStack.assets"
+      ],
+      "metadata": {
+        "/PracticeCdkStack/SecureBankingVPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPC5E449877"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPublicSubnet1Subnet282B9DB5"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPublicSubnet1RouteTable36B7FD9C"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPublicSubnet1RouteTableAssociation288E15D7"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPublicSubnet1DefaultRoute0F132C0E"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPublicSubnet1EIP29CA6FFA"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPublicSubnet1NATGatewayFE52C9DB"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPublicSubnet2Subnet9E34D561"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPublicSubnet2RouteTable69159147"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPublicSubnet2RouteTableAssociationBB9565F9"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPublicSubnet2DefaultRouteB6E97143"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPrivateSubnet1SubnetF8CD0C53"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPrivateSubnet1RouteTable29B11C1B"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPrivateSubnet1RouteTableAssociation8661C189"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPrivateSubnet1DefaultRouteE4750304"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PrivateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPrivateSubnet2SubnetF93C96D3"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PrivateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPrivateSubnet2RouteTable8E5A7F32"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PrivateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPrivateSubnet2RouteTableAssociation034CB1C4"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/PrivateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCPrivateSubnet2DefaultRoute3AC9FB8B"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCIGW59798B0A"
+          }
+        ],
+        "/PracticeCdkStack/SecureBankingVPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecureBankingVPCVPCGWD060A452"
+          }
+        ],
+        "/PracticeCdkStack/BankingEcsCluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BankingEcsCluster71773492"
+          }
+        ],
+        "/PracticeCdkStack/FraudLogsTable": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "FraudLogsTable215F82E4"
+            }
+          }
+        ],
+        "/PracticeCdkStack/FraudLogsTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudLogsTable215F82E4"
+          }
+        ],
+        "/PracticeCdkStack/FraudEventQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudEventQueueE85C10AD"
+          }
+        ],
+        "/PracticeCdkStack/EcsTaskExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EcsTaskExecutionRoleC0B6A84D"
+          }
+        ],
+        "/PracticeCdkStack/EcsTaskExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EcsTaskExecutionRoleDefaultPolicyDCEEFDC3"
+          }
+        ],
+        "/PracticeCdkStack/CustomerNotifierLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomerNotifierLambdaServiceRole6D7FD3D9"
+          }
+        ],
+        "/PracticeCdkStack/CustomerNotifierLambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomerNotifierLambdaServiceRoleDefaultPolicy5B966021"
+          }
+        ],
+        "/PracticeCdkStack/CustomerNotifierLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomerNotifierLambda26CCEAB0"
+          }
+        ],
+        "/PracticeCdkStack/CustomerNotifierLambda/SqsEventSource:PracticeCdkStackFraudEventQueue190087A0/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomerNotifierLambdaSqsEventSourcePracticeCdkStackFraudEventQueue190087A0E4904E52"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/LB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiServiceLB6D770444"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/LB/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiServiceLBSecurityGroup27CFD301"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/LB/SecurityGroup/to PracticeCdkStackFraudIngestionApiServiceSecurityGroup6AD9EDD3:8000": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiServiceLBSecurityGrouptoPracticeCdkStackFraudIngestionApiServiceSecurityGroup6AD9EDD3800030EBEB55"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/LB/PublicListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiServiceLBPublicListener81EB1849"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/LB/PublicListener/ECSGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiServiceLBPublicListenerECSGroupA1457045"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/LoadBalancerDNS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiServiceLoadBalancerDNSBD66C52E"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/ServiceURL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiServiceServiceURL7BBAD24E"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/TaskDef/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiServiceTaskDefDA55B6EE"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/TaskDef/web/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiServiceTaskDefwebLogGroup55BD1E34"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/TaskDef/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiServiceTaskDefExecutionRoleCFC47815"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/TaskDef/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiServiceTaskDefExecutionRoleDefaultPolicy20100091"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/Service/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiService30368617"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/Service/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiServiceSecurityGroupABBD2C49"
+          }
+        ],
+        "/PracticeCdkStack/FraudIngestionApiService/Service/SecurityGroup/from PracticeCdkStackFraudIngestionApiServiceLBSecurityGroup7D6D1762:8000": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FraudIngestionApiServiceSecurityGroupfromPracticeCdkStackFraudIngestionApiServiceLBSecurityGroup7D6D176280008EBF4189"
+          }
+        ],
+        "/PracticeCdkStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/PracticeCdkStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/PracticeCdkStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/PracticeCdkStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "PracticeCdkStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
