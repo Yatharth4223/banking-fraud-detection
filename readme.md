@@ -3,7 +3,7 @@
 ## 1. Architecture Diagram
 The system is built as a decoupled, event-driven microservice pipeline.
 
-![Architecture Diagram](Deliverables/ArchitectureDiagram_v3.png)
+![Architecture Diagram](Deliverables/ArchitectureDiagram.png)
 
 Summary - 
 1. An Application Load Balancer securely exposes the application endpoints to the users through a public subnet in the VPC.
@@ -23,8 +23,8 @@ Summary -
 
 ### Rule 3
 * Transactions originating from different geographic locations within a timespan of 15 minutes (900 seconds).
-* The application queries DynamoDB to look at records starting with the specific account_id, fetches the last record [last location and timestamp] and terminates the search.
-* The code then calculates the time gap and the transactions.
+* The Application scans the DynamoDB table, finds transaction logs starting with ("TRN#<accountId>").
+* The matched history records are sorted by timestamp to capture the latest transaction location. If the location received from the incoming transaction differs from the location retrived from the database storing historical transactions, then it is flagged as an anomaly.
 
 ## 3. Steps to Deploy the Solution
 
@@ -65,21 +65,21 @@ Interactive API Docs : http://Practi-Fraud-WvVFxZlT0xfn-331392164.us-east-1.elb.
 
 #### Process Transactions
 
-URL: /api/v1/transactions
+URL: /api/transactions
 
 Method: POST
 
 Headers: Content-Type: application/json
 
-#### Request Format JSON-
+#### Request Format JSON -
 
 {
-  "account_id": "ACC-9981A",
+  "accountId": "ACC-9981A",
   "amount": 250.75,
-  "transaction_type": "withdrawal",
+  "transactionType": "withdrawal",
   "location": "Oakville, ON",
-  "failed_login_attempts": 0,
-  "timestamp": "2026-06-17T12:00:00Z"
+  "failedLoginAttempts": 0,
+  "timestamp": "2026-06-18T08:16:01.314Z"
 }
 
 #### Response Format -
@@ -87,17 +87,17 @@ Headers: Content-Type: application/json
 Example - Approved Transaction (HTTP 201 Created)
 
 {
-  "transaction_id": "TXN#ACC-9981A#2026-06-17T12:00:00+00:00",
+  "TransactionID": "TRN#ACC-9981A#2026-06-18T08:16:01.314000+00:00",
   "status": "approved",
-  "evaluations_triggered": 0
+  "RulesViolated": 0
 }
 
-Example - Flagged Transaction (too many failed login attempts)
+Example - Flagged Transaction (HTTP 201 Created)
 
 {
-  "transaction_id": "TXN#ACC-9981A#2026-06-17T12:05:00+00:00",
+  "TransactionID": "TRN#ACC-9981A#2026-06-18T08:16:01.314000+00:00",
   "status": "flagged",
-  "evaluations_triggered": 1
+  "RulesViolated": 1
 }
 
 

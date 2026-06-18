@@ -1281,7 +1281,7 @@
                           {
                             "essential": true,
                             "image": {
-                              "Fn::Sub": "${AWS::AccountId}.dkr.ecr.${AWS::Region}.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-${AWS::AccountId}-${AWS::Region}:17aa3a7d3793e28fb8e4af9832e283078ca8d8219dc3d13ac0be95d15d9534b7"
+                              "Fn::Sub": "${AWS::AccountId}.dkr.ecr.${AWS::Region}.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-${AWS::AccountId}-${AWS::Region}:2e975e3217f5c7ddda3c0c79fe55e61ab66279b59907e0fa8f8076f97670277e"
                             },
                             "name": "web",
                             "portMappings": [
